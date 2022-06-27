@@ -85,7 +85,7 @@ legend{
 
 #login{
    font-family: Arial, Helvetica, sans-serif;
-   background-color: linear-gradient(45deg, red, blue);
+   background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17,54,71) );
 }
 
 .Login{
@@ -106,7 +106,7 @@ legend{
   font-size: 20px;
 }
 
-.Login button{
+.input{
   background-color: dodgerblue;
   border: none;
   padding: 15px;
@@ -115,7 +115,9 @@ legend{
   font-size: 15px;
 }
 
-.Login button:hover{
+.input:hover{
   background-color: deepskyblue;
   cursor: pointer;
 }
+
+

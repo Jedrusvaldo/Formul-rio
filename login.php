@@ -8,13 +8,16 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body id="login">
+<a href="home.php">Voltar</a>
   <div class="Login">
     <h1>Login</h1>
-    <input id="sn" type="text" placeholder="Nome">
-    <br><br>
-    <input id="sn" type="password" placeholder="Senha">
-    <br><br>
-    <button>Enviar</button>
+    <form action="testLogin.php" method="POST">
+      <input id="sn" type="text" name="email" placeholder="Nome">
+      <br><br>
+      <input id="sn" type="password" name="senha" placeholder="Senha">
+      <br><br>
+      <input class="input" type="submit" name="submit" value="Enviar">
+    </form>
   </div>
   
 </body>
