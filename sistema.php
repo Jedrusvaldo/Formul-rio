@@ -8,10 +8,15 @@ if((!isset ($_SESSION['email']) == true)and (!isset ($_SESSION['senha']) == true
   header('Location: login.php');
 }
 $logado = $_SESSION['email'];
-
-$sql = "SELECT * FROM usuários ORDER BY id DESC";
+if(!empty($_GET['search']))
+{
+  $data = $_GET['search'];
+  $sql = "SELECT * FROM usuários WHERE id LIKE '%$data%' or nome LIKE '%$data%' or email LIKE '%$data%' ORDER BY id DESC";
+}
+else{
+  $sql = "SELECT * FROM usuários ORDER BY id DESC";
+}
 $result = $conexao ->query($sql);
-
 
 ?>
 <!DOCTYPE html>
@@ -27,6 +32,7 @@ $result = $conexao ->query($sql);
       background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
       color:white;
       text-aling:center;
+    
     }
     .table-bg{
       background: rgba(0,0,0,0.3);
@@ -37,6 +43,10 @@ $result = $conexao ->query($sql);
       display:flex;
       justify-content:center;
       gap: 0.1%;
+    }
+
+   {
+      text-decoration:none;
     }
   </style>
 </head>
@@ -53,13 +63,15 @@ $result = $conexao ->query($sql);
         </div>
     </nav>
     <br>
+    <div id="h1">
     <?php
     echo "<h1>Bem vindo <u>$logado</u></h1>";
     ?>
+    </div>
     <br>
     <div class="box_search">
       <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
-      <button class="btn btn-primary">
+      <button onclick="searchData()" class="btn btn-primary">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.     007  0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
       </svg>
@@ -124,6 +136,18 @@ $result = $conexao ->query($sql);
 
 </body>
 <script>
-   var sesrch = document
+   var search = document.getElementById('pesquisar');
+
+   search.addEventListener("keydown" , function(event) {
+    if(event.key === "Enter")
+    {
+      searchData();
+    }
+   });
+
+   function searchData()
+   {
+    window.location = 'sistema.php?search='+search.value;
+   }
 </script>
 </html>

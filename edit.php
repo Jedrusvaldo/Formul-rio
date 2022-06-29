@@ -118,10 +118,14 @@ include_once('config.php');
         #update:hover{
             background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
         }
+
+        #voltar{
+          text-decoration:none;
+        }
     </style>
 </head>
 <body>
-  <a href="sistema.php">Voltar</a>
+  <a id="voltar" href="sistema.php">Voltar</a>
   
   <div class="box">
     <form action="saveEdit.php" method="POST"> 

@@ -36,9 +36,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário</title>
   <link rel="stylesheet" href="./style.css">
+  <style>
+    #voltar{
+      text-decoration:none;
+      color:#ffff;
+      font-size:25px;
+    }
+  </style>
 </head>
 <body>
-  <a href="home.php">Voltar</a>
+  <a id="voltar" href="home.php">Voltar</a>
   
   <div class="box">
     <form action="formulario.php" method="POST"> 

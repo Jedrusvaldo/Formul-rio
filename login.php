@@ -6,17 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tela Login</title>
   <link rel="stylesheet" href="./style.css">
+  <style>
+    #voltar{
+      text-decoration:none;
+      color:#ffff;
+      font-size:25px;
+    }
+  </style>
 </head>
 <body id="login">
-<a href="home.php">Voltar</a>
+<a id="voltar" href="home.php">Voltar</a>
   <div class="Login">
     <h1>Login</h1>
     <form action="testLogin.php" method="POST">
-      <input id="sn" type="text" name="email" placeholder="Nome">
+      <input id="sn" type="text" name="email" placeholder="Email">
       <br><br>
       <input id="sn" type="password" name="senha" placeholder="Senha">
       <br><br>
-      <input class="input" type="submit" name="submit" value="Enviar">
+      <a href="DESTINO/index.html">
+        <input class="input" type="submit" name="submit" value="Enviar">
+      </a>
     </form>
   </div>
   

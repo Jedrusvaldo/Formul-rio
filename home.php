@@ -21,7 +21,7 @@
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.6);
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 a{
@@ -45,8 +45,8 @@ a:hover{
 
 </head>
 <body>
-  <h1>Bem-vindo</h1>
-  <h2>Divirta-se</h2>
+  <h1>Bem-vindo.</h1>
+  <h2>Divirta-se.</h2>
 
   <div class="box">
     <a href="login.php">Login</a>
